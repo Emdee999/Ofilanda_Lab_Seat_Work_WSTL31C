@@ -1,6 +1,6 @@
-Marc Dave U. Ofilanda - C334_IT - September 15,2025
+Marc Dave U. Ofilanda - C334_IT - September 15, 2025 - Ma'am Gen-Gen H. Roma
 
-Seatwork (Online Class)
+Seatwork during (Online Class)
 
 Instructions: 
 
