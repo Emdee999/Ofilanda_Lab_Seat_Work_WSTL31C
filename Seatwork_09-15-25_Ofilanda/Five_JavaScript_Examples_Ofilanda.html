@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple JavaScript Examples</title>
+</head>
+<body>
+    <h1>JavaScript Examples</h1>
+    
+    <h3>1. Input a text</h3>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="showName()">Show Name</button>
+    <p id="nameOutput"></p>
+    <script>
+        function showName() {
+            var name = document.getElementById('nameInput').value;
+            document.getElementById('nameOutput').innerHTML = "Hello " + name + "!";
+        }
+    </script>
+    <hr>
+
+    <!-- Example 2: Counter -->
+    <h3>2. Add 1 or Minus 1</h3>
+    <p id="counter">0</p>
+    <button onclick="addOne()">Add 1</button>
+    <button onclick="subtractOne()">Subtract 1</button>
+    <script>
+        var count = 0;
+        function addOne() {
+            count++;
+            document.getElementById('counter').innerHTML = count;
+        }
+        function subtractOne() {
+            count--;
+            document.getElementById('counter').innerHTML = count;
+        }
+    </script>
+    <hr>
+
+    <!-- Example 3: Hide/Show -->
+    <h3>3. Hide or Show the text</h3>
+    <p id="toggleText">Marc Dave Ofilanda_Seatwork_09-15-25</p>
+    <button onclick="toggleVisibility()">Hide/Show</button>
+    <script>
+        function toggleVisibility() {
+            var text = document.getElementById('toggleText');
+            if (text.style.display === 'none') {
+                text.style.display = 'block';
+            } else {
+                text.style.display = 'none';
+            }
+        }
+    </script>
+    <hr>
+
+    <!-- Example 4: Background Color Changer -->
+    <h3>4. Change Background Color</h3>
+    <button onclick="changeBackground('red')">Red</button>
+    <button onclick="changeBackground('blue')">Blue</button>
+    <button onclick="changeBackground('green')">Green</button>
+    <button onclick="changeBackground('white')">Reset</button>
+    <script>
+        function changeBackground(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+    <hr>
+
+    <!-- Example 5: Mouse Hover Function -->
+    <h3>5. Mouse Hover Effect</h3>
+    <p id="hoverText">Hover the mouse here to change the text.</p>
+    <button onmouseover="changeTextOnHover()" onmouseout="resetText()">Hover Over Me</button>
+    <script>
+        function changeTextOnHover() {
+            document.getElementById('hoverText').innerHTML = "Slowly but surely :)";
+        }
+        function resetText() {
+            document.getElementById('hoverText').innerHTML = "Hover the mouse here to change the text.";
+        }
+    </script>
+
+</body>
+</html>
