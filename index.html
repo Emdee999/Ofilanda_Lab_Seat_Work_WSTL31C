@@ -58,6 +58,10 @@
       border-radius: 5px;
       margin: auto auto;
       display:block;
+      transition: transform 0.3s ease;
+    }
+    .fact-image:hover {
+      transform: scale(1.1) rotate(3deg);
     }
     .video-container {
       position: relative;
@@ -100,7 +104,7 @@
     .comment-form button:hover{
       transform: scale(1.1) rotate(5deg);
     }
-     .ball {
+    .ball {
       width: 60px;
       height: 60px;
       margin: 20px auto;
@@ -108,12 +112,95 @@
       background: linear-gradient(45deg, #1e1e1e, #555);
       animation: spin 2s infinite linear;
       transform-style: preserve-3d;
-      }
-      @keyframes spin {
+    }
+    @keyframes spin {
       from { transform: rotateY(0deg) rotateX(0deg); }
       to   { transform: rotateY(360deg) rotateX(360deg); }
-      }
+    }
 
+    /* JavaScript Interactive Sections */
+    .js-interactive-section {
+      background: #f9f9f9;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 2px solid #333;
+    }
+    .js-interactive-section h2 {
+      color: #1e1e1e;
+      margin-top: 0;
+      text-align: center;
+      font-size: 2em;
+      border-bottom: 3px solid #333;
+      padding-bottom: 10px;
+    }
+    .js-example {
+      background: #fff;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .js-example h3 {
+      color: #444;
+      margin-top: 0;
+    }
+    .js-example input[type="text"] {
+      padding: 8px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .js-example button {
+      padding: 8px 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .js-example button:hover {
+      background-color: #555;
+    }
+    #counter {
+      font-size: 2em;
+      font-weight: bold;
+      color: #1e1e1e;
+    }
+
+    /* JavaScript Concepts Section */
+    .concepts-section {
+      background: beige;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    .concepts-section h2 {
+      text-align: center;
+      color: #333;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .concept-box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    .concept-box h3 {
+      margin-top: 0;
+      color: #444;
+    }
+    .output {
+      font-family: monospace;
+      white-space: pre-wrap;
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
@@ -148,14 +235,14 @@
     <section>
       <img src="https://images.pexels.com/photos/9072340/pexels-photo-9072340.jpeg" alt="Training" class="fact-image">
       <h2>Esports Athletes Train Like Pros</h2>
-      <p>Top players often train 8–12 hours a day, focusing on strategy, reflexes, and teamwork. Their routines also include analyzing opponents’ playstyles, scrimmaging with other professional teams, and even maintaining physical fitness and mental health to perform at their peak during tournaments.</p>
+      <p>Top players often train 8–12 hours a day, focusing on strategy, reflexes, and teamwork. Their routines also include analyzing opponents' playstyles, scrimmaging with other professional teams, and even maintaining physical fitness and mental health to perform at their peak during tournaments.</p>
     </section>
 
     <section>
       <div class="image-row">
         <img src="https://media.gettyimages.com/id/1197314794/photo/28-january-2020-berlin-johan-n0tail-sundstein-captain-of-team-og-at-the-premiere-of-the.jpg?s=612x612&w=0&k=20&c=jR8iwus-A5QKF0sK8gJiCEytkxAfItWncM83mFXbEI0=" alt="N0tail" class="fact-image">
-        <img src="https://media.gettyimages.com/id/896529302/photo/seoul-south-korea-faker-real-name-lee-sang-hyeok-the-top-korean-esports-league-of-legends.jpg?s=612x612&w=0&k=20&c=JZptvGbvf-bKV1Bq_JVJqzoQL4VRqxH5THpF1WuKq3I=" alt= "faker" class="fact-image">
-        <img src="https://media.gettyimages.com/id/1359700160/photo/copenhagen-denmark-oleksandr-s1mple-kostyliev-of-team-natus-vincere-during-the-blast-premier.jpg?s=612x612&w=0&k=20&c=e9xn25pNuMOcomnamyAc4dWdZa2tpu6ihwR6oMaBkh4=" alt="s1mple" class="fact-image ">
+        <img src="https://media.gettyimages.com/id/896529302/photo/seoul-south-korea-faker-real-name-lee-sang-hyeok-the-top-korean-esports-league-of-legends.jpg?s=612x612&w=0&k=20&c=JZptvGbvf-bKV1Bq_JVJqzoQL4VRqxH5THpF1WuKq3I=" alt="faker" class="fact-image">
+        <img src="https://media.gettyimages.com/id/1359700160/photo/copenhagen-denmark-oleksandr-s1mple-kostyliev-of-team-natus-vincere-during-the-blast-premier.jpg?s=612x612&w=0&k=20&c=e9xn25pNuMOcomnamyAc4dWdZa2tpu6ihwR6oMaBkh4=" alt="s1mple" class="fact-image">
       </div>
       <h2>GOAT Players in Esports</h2>
       <p><strong>Dota 2:</strong> Johan "N0tail" Sundstein – 2x TI champion, over $7M in earnings.</p>
@@ -175,13 +262,47 @@
 
     <section>
       <h2>Esports</h2>
-      <div class="video-container">
-        <video controls>
-          <source src="https://www.pexels.com/download/video/9071417/">
-        </video>
-      </div>
-    </section>
+      <a href="https://www.pexels.com/video/9071417/" target="_blank">
+        <div class="video-container">
+          <video controls>
+            <source src="https://www.pexels.com/download/video/9071417/">
+          </video>
+        </div>
+      </a>
 
+      <a href="https://www.pexels.com/video/4291570/" target="_blank"> 
+  <div class="video-container">
+    <video controls>
+      <source src="https://www.pexels.com/download/video/4291570/">
+    </video>
+  </div>
+</a>
+
+<a href="https://www.pexels.com/video/7985976/" target="_blank"> 
+  <div class="video-container">
+    <video controls>
+      <source src="https://www.pexels.com/download/video/7985976/">
+    </video>
+  </div>
+</a>
+
+<a href="https://www.pexels.com/video/8128311/" target="_blank"> 
+  <div class="video-container">
+    <video controls>
+      <source src="https://www.pexels.com/download/video/8128311/">
+    </video>
+  </div>
+</a>
+
+<a href="https://www.pexels.com/video/4247321/" target="_blank"> 
+  <div class="video-container">
+    <video controls>
+      <source src="https://www.pexels.com/download/video/4247321/">
+    </video>
+  </div>
+</a>
+    </section>
+      
     <section>
       <h3>Leave a comment here:</h3>
       <form class="comment-form">  
@@ -190,11 +311,182 @@
         <button type="submit"> Post Comment</button>
       </form>
     </section>
+
+    <!-- Five Simple JavaScript Interactions -->
+    <div class="js-interactive-section">
+      <h2>Five Simple JavaScript Interactions</h2>
+
+      <div class="js-example">
+        <h3>1. Input a text</h3>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showName()">Show Name</button>
+        <p id="nameOutput"></p>
+      </div>
+
+      <div class="js-example">
+        <h3>2. Add 1 or Minus 1</h3>
+        <p id="counter">0</p>
+        <button onclick="addOne()">Add 1</button>
+        <button onclick="subtractOne()">Subtract 1</button>
+      </div>
+
+      <div class="js-example">
+        <h3>3. Hide or Show the text</h3>
+        <p id="toggleText">Marc Dave Ofilanda_Seatwork_09-15-25</p>
+        <button onclick="toggleVisibility()">Hide/Show</button>
+      </div>
+
+      <div class="js-example">
+        <h3>4. Change Background Color</h3>
+        <button onclick="changeBackground('red')">Red</button>
+        <button onclick="changeBackground('blue')">Blue</button>
+        <button onclick="changeBackground('green')">Green</button>
+        <button onclick="changeBackground('white')">Reset</button>
+      </div>
+
+      <div class="js-example">
+        <h3>5. Mouse Hover Effect</h3>
+        <p id="hoverText">Hover the mouse here to change the text.</p>
+        <button onmouseover="changeTextOnHover()" onmouseout="resetText()">Hover Over Me</button>
+      </div>
+    </div>
+
+    <!-- JavaScript Concepts Showcase -->
+    <div class="concepts-section">
+      <h2>JavaScript Concepts Showcase</h2>
+
+      <div class="concept-box">
+        <h3>1. Variables</h3>
+        <p class="output" id="variablesOutput"></p>
+      </div>
+
+      <div class="concept-box">
+        <h3>2. Operators</h3>
+        <p class="output" id="operatorsOutput"></p>
+      </div>
+
+      <div class="concept-box">
+        <h3>3. Conditional Statement</h3>
+        <p class="output" id="conditionOutput"></p>
+      </div>
+
+      <div class="concept-box">
+        <h3>4. Loops</h3>
+        <p class="output" id="loopsOutput"></p>
+      </div>
+
+      <div class="concept-box">
+        <h3>5. Functions</h3>
+        <p class="output" id="functionsOutput"></p>
+      </div>
+
+      <div class="concept-box">
+        <h3>6. Objects</h3>
+        <p class="output" id="objectsOutput"></p>
+      </div>
+    </div>
+
   </main>
 
   <footer>
     <p>&copy; 2025 Esports Fun Facts | Created by Marc</p>
   </footer>
 
+  <script>
+    // Five Simple JavaScript Interactions
+    function showName() {
+      var name = document.getElementById('nameInput').value;
+      document.getElementById('nameOutput').innerHTML = "Hello " + name + "!";
+    }
+
+    var count = 0;
+    function addOne() {
+      count++;
+      document.getElementById('counter').innerHTML = count;
+    }
+    function subtractOne() {
+      count--;
+      document.getElementById('counter').innerHTML = count;
+    }
+
+    function toggleVisibility() {
+      var text = document.getElementById('toggleText');
+      if (text.style.display === 'none') {
+        text.style.display = 'block';
+      } else {
+        text.style.display = 'none';
+      }
+    }
+
+    function changeBackground(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+    function changeTextOnHover() {
+      document.getElementById('hoverText').innerHTML = "Slowly but surely :)";
+    }
+    function resetText() {
+      document.getElementById('hoverText').innerHTML = "Hover the mouse here to change the text.";
+    }
+
+    // JavaScript Concepts Showcase
+    // 1. Variables
+    let name = "Marc";
+    let age = 20;
+    document.getElementById("variablesOutput").textContent =
+      "Name: " + name + "\nAge: " + age;
+
+    // 2. Operators
+    let a = 10, b = 3;
+    let sum = a + b;
+    let product = a * b;
+    document.getElementById("operatorsOutput").textContent =
+      "a = " + a + ", b = " + b + "\n" +
+      "a + b = " + sum + "\n" +
+      "a * b = " + product;
+
+    // 3. Conditional Statement
+    let grade = 85;
+    let result;
+    if (grade >= 90) {
+      result = "Excellent!";
+    } else if (grade >= 75) {
+      result = "Passed.";
+    } else {
+      result = "Failed.";
+    }
+    document.getElementById("conditionOutput").textContent =
+      "Grade: " + grade + "\nResult: " + result;
+
+    // 4. Loops
+    let loopText = "";
+    for (let i = 1; i <= 5; i++) {
+      loopText += "Number " + i + "\n";
+    }
+    document.getElementById("loopsOutput").textContent = loopText;
+
+    // 5. Functions
+    function square(num) {
+      return num * num;
+    }
+    let num = 6;
+    document.getElementById("functionsOutput").textContent =
+      "square(" + num + ") = " + square(num);
+
+    // 6. Objects
+    let student = {
+      firstName: "Marc",
+      lastName: "Developer",
+      age: 20,
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+    document.getElementById("objectsOutput").textContent =
+      "First Name: " + student.firstName + "\n" +
+      "Last Name: " + student.lastName + "\n" +
+      "Age: " + student.age + "\n" +
+      "Full Name (via method): " + student.fullName();
+  </script>
 </body>
 </html>
