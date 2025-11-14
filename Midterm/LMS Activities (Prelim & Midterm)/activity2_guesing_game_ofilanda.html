@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFILANDA_Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+        }
+
+        .game-box {
+            width: 400px;
+            background-color: #ffffff;
+            border: 10px solid #2c3e50;
+            padding: 30px 20px;
+            margin: 100px auto; 
+            text-align: center;
+            border-radius: 10px; 
+        }
+        
+        input {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            width: 60%;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        #feedback {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-box">
+        <h2>Guess the Number</h2>
+        <p>I'm thinking of a number between 1 and 100.</p>
+        
+        <input type="number" id="userGuess" placeholder="Type number here...">
+        <button onclick="checkGuess()">Guess</button>
+        
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        const targetNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        const inputField = document.getElementById("userGuess");
+        
+        inputField.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkGuess();
+            }
+        });
+
+        function checkGuess() {
+            let userInputValue = inputField.value;
+            let guess = parseInt(userInputValue);
+            let feedbackEl = document.getElementById("feedback");
+
+            attempts++;
+
+            if (isNaN(guess)) {
+                feedbackEl.innerHTML = "Please enter a valid number.";
+                feedbackEl.style.color = "red";
+            } 
+            else if (guess < targetNumber) {
+                feedbackEl.innerHTML = "Too low!";
+                feedbackEl.style.color = "orange";
+                resetInput();
+            } 
+            else if (guess > targetNumber) {
+                feedbackEl.innerHTML = "Too high!";
+                feedbackEl.style.color = "orange";
+                resetInput();
+            } 
+            else {
+                feedbackEl.innerHTML = "Correct! You won in " + attempts + " attempts.";
+                feedbackEl.style.color = "green";
+                document.querySelector('.game-box').style.borderColor = "green";
+            }
+        }
+
+        function resetInput() {
+            inputField.value = "";
+            inputField.focus();
+        }
+    </script>
+
+</body>
+</html>
