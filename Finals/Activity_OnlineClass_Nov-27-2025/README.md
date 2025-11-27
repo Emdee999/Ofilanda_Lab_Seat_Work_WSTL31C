@@ -1,0 +1,1 @@
+This activity demonstrates a  registration module for the SnipSnap system. It features a PHP-based backend that captures user input via HTTP POST requests and persistently stores the data in a local MySQL database managed via XAMPP/phpMyAdmin.
